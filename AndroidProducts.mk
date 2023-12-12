@@ -15,10 +15,10 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_bluejay.mk \
-    $(LOCAL_DIR)/aosp_bluejay_hwasan.mk \
+    $(LOCAL_DIR)/rising_bluejay.mk \
+    $(LOCAL_DIR)/rising_bluejay_hwasan.mk \
     $(LOCAL_DIR)/factory_bluejay.mk
 
 
 COMMON_LUNCH_CHOICES := \
-    aosp_bluejay-trunk_staging-userdebug
+    rising_bluejay-userdebug

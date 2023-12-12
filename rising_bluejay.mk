@@ -1,5 +1,6 @@
 #
 # Copyright 2021 The Android Open-Source Project
+# Copyright 2023 RisingOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +15,22 @@
 # limitations under the License.
 #
 
+# Inherit risingOS vendor config
+$(call inherit-product, vendor/rising/config/rising.mk)
+
 $(call inherit-product, device/google/gs101/aosp_common.mk)
 $(call inherit-product, device/google/bluejay/device-bluejay.mk)
 
-PRODUCT_NAME := aosp_bluejay
+PRODUCT_NAME := rising_bluejay
 PRODUCT_DEVICE := bluejay
-PRODUCT_MODEL := AOSP on Bluejay
-PRODUCT_BRAND := Android
+PRODUCT_MODEL := Pixel 6a
+PRODUCT_BRAND := google
 PRODUCT_MANUFACTURER := Google
 
 PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=bluejay \
+    PRIVATE_BUILD_DESC="bluejay-user 14 UP1A.231105.003 11010452 release-keys"
+
+BUILD_FINGERPRINT := google/bluejay/bluejay:14/UP1A.231105.003/11010452:user/release-keys
