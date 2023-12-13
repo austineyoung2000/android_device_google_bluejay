@@ -20,6 +20,7 @@ $(call inherit-product, vendor/rising/config/rising.mk)
 
 $(call inherit-product, device/google/gs101/aosp_common.mk)
 $(call inherit-product, device/google/bluejay/device-bluejay.mk)
+$(call inherit-product, device/google/bluejay/device-common.mk)
 
 PRODUCT_NAME := rising_bluejay
 PRODUCT_DEVICE := bluejay
