@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/google/bluejay/aosp_bluejay.mk)
-PRODUCT_NAME := aosp_bluejay_hwasan
+$(call inherit-product, device/google/bluejay/rising_bluejay.mk)
+PRODUCT_NAME := rising_bluejay_hwasan
 
 # Add "hwaddress" as a global sanitizer if it's missing.
 ifeq ($(filter hwaddress,$(SANITIZE_TARGET)),)
