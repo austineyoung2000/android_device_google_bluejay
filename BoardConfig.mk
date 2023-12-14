@@ -6,6 +6,7 @@
 
 BUILD_BROKEN_DUP_RULES := true
 
+ifeq ($(INLINE_KERNEL_BUILDING),true)
 # Kernel
 TARGET_KERNEL_DTBO_PREFIX := dts/
 TARGET_KERNEL_DTBO := google/devices/bluejay/dtbo.img
@@ -19,6 +20,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(foreach m,$(BOARD_VENDOR_KERNEL_MODULES_LO
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD_RAW := $(strip $(shell cat device/google/bluejay/vendor_boot.modules.load))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(foreach m,$(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD_RAW),$(notdir $(m)))
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD)
+endif
 
 TARGET_KERNEL_EXT_MODULES := \
     amplifiers/audiometrics \
