@@ -21,6 +21,10 @@ include packages/apps/PixelParts/device.mk
 PRODUCT_PACKAGES += \
     Iwlan
 
+# IWLAN
+PRODUCT_PACKAGES += \
+    Iwlan
+
 # Build necessary packages for vendor
 
 # Codec2
