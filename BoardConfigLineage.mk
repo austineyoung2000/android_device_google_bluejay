@@ -7,8 +7,10 @@
 BUILD_BROKEN_DUP_RULES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 DEVICE_PATH := device/google/bluejay
+
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_bluejay
+INIT_LIB := //$(DEVICE_PATH):libinit_bluejay
+$(call soong_config_set,libinit,vendor_init_lib,$(INIT_LIB))
 
 # Kernel modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist.vendor_boot
